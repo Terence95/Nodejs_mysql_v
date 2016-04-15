@@ -46,7 +46,7 @@ function upload(response, request) {
     console.log("about to parse");
     form.parse(request, function (error, fields, files) {
         console.log("parsing done");
-        fs.renameSync(files.upload.path, "/Users/terence/Desktop/node.js学习/Nodejs_mysql_v/png/test.png")
+        fs.renameSync(files.upload.path, __dirname + "/png/test.png");
     });
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write("received image:<br/>");
@@ -58,7 +58,8 @@ function show(response, request) {
     console.log("Request handler 'show' was called.");
     var sec = 50*1;
     setTimeout(function() {
-        fs.readFile("/Users/terence/Desktop/node.js学习/Nodejs_mysql_v/png/test.png", "binary", function (error, file) {
+        
+        fs.readFile(__dirname + "/png/test.png", "binary", function (error, file) {
         if(error) {
             response.writeHead(500, {"Content-Type": "text/plain"});
             response.write(error + "\n");
@@ -119,11 +120,13 @@ function showdataindb(response, request) {
             return;
         }
         res.forEach(function (user) {
-            response.write("<li>t_user-id: " + user.id + " t_user-name: " + user.name + " t_user-create_date: " + user.create_date);
+            response.write("<li>id: " + user.id + "</li>" + "<li>" + "name: " + user.name + "</li>" + "<li>" +"create_date: " + user.create_date + "</li>" + "<br><br>");
         });
         console.log("[Query] Success!");
         
     });
+
+    conn.end();
     
     
 }
