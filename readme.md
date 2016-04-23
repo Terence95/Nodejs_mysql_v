@@ -26,6 +26,11 @@
 	
 - 配置node.js环境<br>
   <http://www.runoob.com/nodejs/nodejs-install-setup.html>
+<br>
+- 安装node-mysql
+	- <http://blog.fens.me/nodejs-mysql-intro/>
+
+
   
 - 配置Mysql数据库：sql语句在 initmysql.sql文件里
 - 运行项目

@@ -29,7 +29,7 @@ function  start(response, request) {
     '<div>'+
     '<p>press the button to show the data in database</p>'+
     '<form action="/showdataindb">'+
-    '<input type="submit" value="submit">'+
+    '<input type="submit" value="search">'+
     '</form>'+
     '</div>'+
     '</body>'+
